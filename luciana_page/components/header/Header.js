@@ -25,12 +25,12 @@ const headerList = [
   {
     name: "Linkedin",
     onClick: () => console.log("Linkedin"),
-    icon: <BsLinkedin size="25px" />,
+    icon: <BsLinkedin size="28px" />,
   },
   {
     name: "Behance",
     onClick: () => console.log("Behance"),
-    icon: <AiFillBehanceSquare size="30px" />,
+    icon: <AiFillBehanceSquare size="33px" />,
   },
   {
     name: "Instagram",
@@ -41,7 +41,7 @@ const headerList = [
 
 const Header = () => {
   return (
-    <Flex justify="space-between" w="100%">
+    <Flex justify="space-between" w="100%" paddingTop="10px">
       <Flex justify="center" alignItems="center" w="100px" h="100px">
         <Image src={Logo} alt="logo" />
       </Flex>
@@ -59,7 +59,7 @@ const Header = () => {
               {headerItem.icon ? (
                 headerItem.icon
               ) : (
-                <Text>{headerItem.name}</Text>
+                <Text fontWeight="600" fontSize={["12px", "16px", "20px", "24px"]} >{headerItem.name}</Text>
               )}
             </Flex>
           );
