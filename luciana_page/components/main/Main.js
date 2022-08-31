@@ -41,7 +41,7 @@ const Main = () => {
       alignItems="center"
       paddingTop="30px"
     >
-      <Grid w="100%" gridTemplateColumns="repeat(auto-fit, minmax(550px, 1fr))">
+      <Grid w="100%" gridTemplateColumns="repeat(auto-fit, minmax(550px, 1fr))" >
         {mainList.map((mainItem) => {
           return (
             <GridItem w="100%" overflow="hidden" h="100%"  key={mainItem.name}>
@@ -57,7 +57,7 @@ const Main = () => {
                 position="relative"
               >
                 {/* {isHovering.isHovering && isHovering.id === mainItem.name && <Text>{mainItem.message}</Text>} */}
-                <Box backgroundImage={mainItem.img}>
+                <Box >
                   <Image
                     layout="responsive"
                     objectFit="cover"
