@@ -11,7 +11,7 @@ export default function Home() {
     <Flex flexDirection="column" justify="center" alignItems="center" px="30px">
       <Head>
         <title>Luciana Page</title>
-        <meta name="description" content="Portfólio " />
+        <meta name="description" content="Portfólio de Designer. Design, Fotografia, Ux" />
         <link rel="icon" href="/logo.png" />
       </Head>
       <Box maxWidth="1100px" width="100%">
