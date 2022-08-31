@@ -5,36 +5,38 @@ import { AiFillBehanceSquare } from "react-icons/ai";
 import { FaInstagramSquare } from "react-icons/fa";
 import Logo from "../images/logo.png";
 import Image from "next/dist/client/image";
+import Link from "next/link";
+import { motion } from "framer-motion";
 
 const headerList = [
   {
     name: "Home",
-    onClick: () => console.log("Home"),
+    href: "/",
     icon: null,
   },
   {
     name: "Info",
-    onClick: () => console.log("Info"),
+    href: "info",
     icon: null,
   },
   {
     name: "Contato",
-    onClick: () => console.log("Contato"),
+    href: "/contato",
     icon: null,
   },
   {
     name: "Linkedin",
-    onClick: () => console.log("Linkedin"),
-    icon: <BsLinkedin size="28px" />,
+    href: "https://www.linkedin.com/in/luciana-ribeiro-designer-grafico/",
+    icon: <BsLinkedin size="26px" />,
   },
   {
     name: "Behance",
-    onClick: () => console.log("Behance"),
-    icon: <AiFillBehanceSquare size="33px" />,
+    href: "https://www.linkedin.com/in/luciana-ribeiro-designer-grafico/",
+    icon: <AiFillBehanceSquare size="34px" />,
   },
   {
     name: "Instagram",
-    onClick: () => console.log("Instagram"),
+    href: "https://www.linkedin.com/in/luciana-ribeiro-designer-grafico/",
     icon: <FaInstagramSquare size="30px" />,
   },
 ];
@@ -53,13 +55,16 @@ const Header = () => {
               w="100%"
               justifyContent="center"
               alignItems="center"
-              onClick={headerItem.onClick}
               key={headerItem.name}
+              as={motion.div}
+              whileHover={{ scale: 1.1 }}
             >
               {headerItem.icon ? (
-                headerItem.icon
+                <Link href={headerItem.href}>{headerItem.icon}</Link>
               ) : (
-                <Text fontWeight="600" fontSize={["12px", "16px", "20px", "24px"]} >{headerItem.name}</Text>
+                <Link href={headerItem.href}>
+                  <Text>{headerItem.name}</Text>
+                </Link>
               )}
             </Flex>
           );

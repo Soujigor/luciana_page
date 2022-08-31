@@ -4,6 +4,7 @@ import styles from "../styles/Home.module.css";
 import { Box, Flex } from "@chakra-ui/react";
 import Header from "../components/header/Header";
 import Main from "../components/main/Main";
+import Info from "../components/Info/Info";
 
 export default function Home() {
   return (
@@ -17,23 +18,24 @@ export default function Home() {
         <Header />
         <Main />
 
-        <footer className={styles.footer}>
+        {/* <footer className={styles.footer}>
+          <Info />
           <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
+          target="_blank"
+          rel="noopener noreferrer"
           >
-            Powered by{" "}
-            <span className={styles.logo}>
-              <Image
-                src="/vercel.svg"
-                alt="Vercel Logo"
-                width={72}
-                height={16}
-              />
-            </span>
+          Powered by{" "}
+          <span className={styles.logo}>
+          <Image
+          src="/vercel.svg"
+          alt="Vercel Logo"
+          width={72}
+          height={16}
+          />
+          </span>
           </a>
-        </footer>
+        </footer> */}
       </Box>
     </Flex>
   );
