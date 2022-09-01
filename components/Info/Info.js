@@ -15,7 +15,7 @@ const Info = () => {
       <Flex direction={["column", "column", "row", "row"]} gap="5">
         <Image src={Foto} alt="Foto" objectFit="fill" />
         <Stack justify="center" alignItems="center">
-          <Text fontSize="3xl" align="left">
+          <Text fontSize="3xl" align="left" fontWeight="bold">
             Sou Graduada em Cinema e Audiovisual, Mestra em Artes, Designer e
             Fotógrafa nas horas vagas.
           </Text>

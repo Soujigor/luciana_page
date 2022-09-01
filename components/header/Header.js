@@ -31,12 +31,12 @@ const headerList = [
   },
   {
     name: "Behance",
-    href: "https://www.linkedin.com/in/luciana-ribeiro-designer-grafico/",
+    href: "https://www.behance.net/lu_ribeiro",
     icon: <AiFillBehanceSquare size="34px" />,
   },
   {
     name: "Instagram",
-    href: "https://www.linkedin.com/in/luciana-ribeiro-designer-grafico/",
+    href: "https://www.instagram.com/lu.ri.beiro",
     icon: <FaInstagramSquare size="30px" />,
   },
 ];
@@ -44,8 +44,16 @@ const headerList = [
 const Header = () => {
   return (
     <Flex justify="space-between" w="100%" paddingTop="10px">
-      <Flex justify="center" alignItems="center" w="100px" h="100px">
-        <Image src={Logo} alt="logo" />
+      <Flex
+        justify="center"
+        alignItems="center"
+        w="100px"
+        h="100px"
+        cursor="pointer"
+      >
+        <Link href="/">
+          <Image src={Logo} alt="logo" />
+        </Link>
       </Flex>
       <Flex gap="20px">
         {headerList.map((headerItem) => {
@@ -58,9 +66,12 @@ const Header = () => {
               key={headerItem.name}
               as={motion.div}
               whileHover={{ scale: 1.1 }}
+              cursor="pointer"
             >
               {headerItem.icon ? (
-                <Link href={headerItem.href}>{headerItem.icon}</Link>
+                <Link href={headerItem.href}>
+                  <a target="_blank">{headerItem.icon}</a>
+                </Link>
               ) : (
                 <Link href={headerItem.href}>
                   <Text>{headerItem.name}</Text>

@@ -40,6 +40,7 @@ const Main = () => {
       justifyContent="center"
       alignItems="center"
       paddingTop="30px"
+      cursor="pointer"
     >
       <Grid w="100%" gridTemplateColumns="repeat(auto-fit, minmax(550px, 1fr))" >
         {mainList.map((mainItem) => {
