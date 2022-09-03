@@ -13,6 +13,7 @@ export default function Home() {
         <title>Luciana Page</title>
         <meta name="description" content="Portfólio de Designer. Design, Fotografia, Ux" />
         <link rel="icon" href="/logo.png" />
+        
       </Head>
       <Box maxWidth="1100px" width="100%">
         <Header />
