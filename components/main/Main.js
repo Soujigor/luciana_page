@@ -32,7 +32,23 @@ const mainList = [
 
 const Main = () => {
   const [isHovering, setIsHovering] = useState({ isHovering: false, id: "" });
-  console.log(isHovering);
+
+  const container = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.5,
+        duration: 1.2,
+      },
+    },
+  };
+
+  const item = {
+    hidden: { opacity: 0 },
+    show: { opacity: 1 },
+  };
+
   return (
     <Flex
       w="100%"
@@ -42,10 +58,24 @@ const Main = () => {
       paddingTop="30px"
       cursor="pointer"
     >
-      <Grid w="100%" gridTemplateColumns="repeat(auto-fit, minmax(550px, 1fr))">
+      <Grid
+        w="100%"
+        gridTemplateColumns="repeat(auto-fit, minmax(550px, 1fr))"
+        as={motion.div}
+        variants={container}
+        initial="hidden"
+        animate="show"
+      >
         {mainList.map((mainItem) => {
           return (
-            <GridItem w="100%" overflow="hidden" h="100%" key={mainItem.name}>
+            <GridItem
+              w="100%"
+              overflow="hidden"
+              h="100%"
+              key={mainItem.name}
+              as={motion.div}
+              variants={item}
+            >
               <Box
                 as={motion.div}
                 whileHover={{
@@ -58,14 +88,23 @@ const Main = () => {
                 position="relative"
                 zIndex={1}
               >
-                <Box position="absolute" zIndex={2} top="50%" left="auto" right="auto">
+                <Flex
+                  h="100%"
+                  w="100%"
+                  justify="center"
+                  align="center"
+                  position="absolute"
+                  zIndex={2}
+                  top="0%"
+                  right="0%"
+                >
                   {isHovering.isHovering && isHovering.id === mainItem.name && (
-                    <Text color="red" fontSize="3xl">
+                    <Text color="white" fontSize="3xl">
                       {mainItem.message}
                     </Text>
                   )}
-                </Box>
-                <Box>
+                </Flex>
+                <Box filter={isHovering.isHovering && isHovering.id === mainItem.name ? '' : "grayscale(1)"}>
                   <Image
                     layout="responsive"
                     objectFit="cover"
