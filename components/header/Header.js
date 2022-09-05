@@ -1,4 +1,4 @@
-import { Flex, Text } from "@chakra-ui/react";
+import { Flex, IconButton, Text } from "@chakra-ui/react";
 import React from "react";
 import { BsLinkedin } from "react-icons/bs";
 import { AiFillBehanceSquare } from "react-icons/ai";
@@ -7,6 +7,8 @@ import Logo from "../images/logo.png";
 import Image from "next/dist/client/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { CloseIcon, HamburgerIcon } from "@chakra-ui/icons";
+import { useState } from "react";
 
 const headerList = [
   {
@@ -42,6 +44,8 @@ const headerList = [
 ];
 
 const Header = () => {
+  const [display, changeDisplay] = useState("none");
+
   return (
     <Flex justify="space-between" w="100%" paddingTop="10px">
       <Flex
@@ -55,7 +59,7 @@ const Header = () => {
           <Image src={Logo} alt="logo" />
         </Link>
       </Flex>
-      <Flex gap="20px">
+      <Flex gap="20px" justify="center" alignItems="center" cursor="pointer">
         {headerList.map((headerItem) => {
           return (
             <Flex
@@ -67,6 +71,7 @@ const Header = () => {
               as={motion.div}
               whileHover={{ scale: 1.1 }}
               cursor="pointer"
+              display={["none", "none", "flex", "flex"]}
             >
               {headerItem.icon ? (
                 <Link href={headerItem.href}>
@@ -80,6 +85,69 @@ const Header = () => {
             </Flex>
           );
         })}
+        <IconButton
+          justify="center"
+          alignItems="center"
+          cursor="pointer"
+          size="lg"
+          marginTop="10px"
+          aria-label="Open Menu"
+          display={["flex", "flex", "none", "none"]}
+          backgroundColor="white"
+          onClick={() => changeDisplay("flex")}
+          icon={<HamburgerIcon height="100%" width="100%" />}
+        />
+      </Flex>
+
+      <Flex
+        w="100vw"
+        display={display}
+        bgColor="gray.50"
+        zIndex={20}
+        h="100vh"
+        pos="fixed"
+        top="0"
+        left="0"
+        overflowY="auto"
+        flexDir="column"
+      >
+        <Flex justify="flex-end">
+          <IconButton
+            mt={2}
+            mr={2}
+            aria-label="Open Menu"
+            size="lg"
+            onClick={() => changeDisplay("none")}
+            icon={<CloseIcon height="100%" width="100%" />}
+          />
+        </Flex>
+        <Flex flexDirection="column" gap="20px">
+          {headerList.map((headerItem) => {
+            return (
+              <Flex
+                h="100%"
+                w="100%"
+                justifyContent="center"
+                alignItems="center"
+                key={headerItem.name}
+                as={motion.div}
+                whileHover={{ scale: 1.1 }}
+                cursor="pointer"
+                // display={["none", "none", "flex", "flex"]}
+              >
+                {headerItem.icon ? (
+                  <Link href={headerItem.href}>
+                    <a target="_blank">{headerItem.icon}</a>
+                  </Link>
+                ) : (
+                  <Link href={headerItem.href}>
+                    <Text>{headerItem.name}</Text>
+                  </Link>
+                )}
+              </Flex>
+            );
+          })}
+        </Flex>
       </Flex>
     </Flex>
   );
