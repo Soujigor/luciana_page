@@ -110,6 +110,8 @@ const Header = () => {
         left="0"
         overflowY="auto"
         flexDir="column"
+        paddingTop="10px"
+        paddingRight="10px"
       >
         <Flex justify="flex-end">
           <IconButton
