@@ -60,7 +60,7 @@ const Main = () => {
     >
       <SimpleGrid
         w="100%"
-        minChildWidth={["250px", "350px", "550px", "550px"]}
+        minChildWidth={["200px", "300px", "350px", "550px"]}
         as={motion.div}
         variants={container}
         initial="hidden"

@@ -112,6 +112,7 @@ const Header = () => {
         flexDir="column"
         paddingTop="10px"
         paddingRight="10px"
+        
       >
         <Flex justify="flex-end">
           <IconButton
@@ -124,7 +125,7 @@ const Header = () => {
             icon={<CloseIcon height="100%" width="100%" />}
           />
         </Flex>
-        <Flex flexDirection="column" gap="20px">
+        <Flex flexDirection="column" gap="50px" paddingTop="50px">
           {headerList.map((headerItem) => {
             return (
               <Flex
