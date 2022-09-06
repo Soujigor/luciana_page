@@ -1,4 +1,4 @@
-import { Box, Flex, Grid, GridItem, Text } from "@chakra-ui/react";
+import { Box, Flex, Grid, GridItem, SimpleGrid, Text } from "@chakra-ui/react";
 import React, { useState } from "react";
 import Revista from "../images/capa_revista.png";
 import Sociais from "../images/capa_sociais.png";
@@ -58,9 +58,9 @@ const Main = () => {
       paddingTop="30px"
       cursor="pointer"
     >
-      <Grid
+      <SimpleGrid
         w="100%"
-        gridTemplateColumns="repeat(auto-fit, minmax(550px, 1fr))"
+        minChildWidth={["250px", "350px", "550px", "550px"]}
         as={motion.div}
         variants={container}
         initial="hidden"
@@ -68,7 +68,7 @@ const Main = () => {
       >
         {mainList.map((mainItem) => {
           return (
-            <GridItem
+            <Box
               w="100%"
               overflow="hidden"
               h="100%"
@@ -113,10 +113,10 @@ const Main = () => {
                   />
                 </Box>
               </Box>
-            </GridItem>
+            </Box>
           );
         })}
-      </Grid>
+      </SimpleGrid>
     </Flex>
   );
 };

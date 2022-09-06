@@ -115,8 +115,9 @@ const Header = () => {
           <IconButton
             mt={2}
             mr={2}
-            aria-label="Open Menu"
-            size="lg"
+            aria-label="Close Menu"
+            size="sm"
+            bgColor="gray.50"
             onClick={() => changeDisplay("none")}
             icon={<CloseIcon height="100%" width="100%" />}
           />

@@ -15,7 +15,7 @@ export default function Home() {
         <link rel="icon" href="/logo.png" />
         
       </Head>
-      <Box maxWidth="1100px" width="100%">
+      <Box maxWidth="1300px" width="100%">
         <Header />
         <Main />
 
