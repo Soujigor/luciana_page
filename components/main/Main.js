@@ -1,4 +1,4 @@
-import { Box, Flex, Grid, GridItem, SimpleGrid, Text } from "@chakra-ui/react";
+import { Box, Flex, SimpleGrid, Text } from "@chakra-ui/react";
 import React, { useState } from "react";
 import Revista from "../images/capa_revista.png";
 import Sociais from "../images/capa_sociais.png";
@@ -10,22 +10,22 @@ import { motion } from "framer-motion";
 const mainList = [
   {
     name: "Sociais",
-    message: "olá",
+    message: "Trabalhos feitos para Redes Sociais em 2022",
     img: Sociais,
   },
   {
     name: "Revista",
-    message: "oasdasdlá",
+    message: "Revista EBAC",
     img: Revista,
   },
   {
     name: "Edição",
-    message: "olássssss",
+    message: "",
     img: Edicao,
   },
   {
     name: "Playlist",
-    message: "ol2232412á",
+    message: "Playlist para Site",
     img: Playlist,
   },
 ];
@@ -99,12 +99,20 @@ const Main = () => {
                   right="0%"
                 >
                   {isHovering.isHovering && isHovering.id === mainItem.name && (
-                    <Text color="white" fontSize="3xl">
-                      {mainItem.message}
-                    </Text>
+                    <Box backdropFilter='auto' backdropBlur='8px' >
+                      <Text color="blue.500" fontSize="2xl" align="center" shadow="base" borderRadius="md">
+                        {mainItem.message}
+                      </Text>
+                    </Box>
                   )}
                 </Flex>
-                <Box filter={isHovering.isHovering && isHovering.id === mainItem.name ? '' : "grayscale(1)"}>
+                <Box
+                  filter={
+                    isHovering.isHovering && isHovering.id === mainItem.name
+                      ? ""
+                      : "grayscale(1)"
+                  }
+                >
                   <Image
                     layout="responsive"
                     objectFit="cover"
