@@ -109,7 +109,7 @@ const Main = () => {
               <Box
                 as={motion.div}
                 whileHover={{
-                  scale: 1.2,
+                  scale: 1.05,
                 }}
                 onHoverStart={() =>
                   setIsHovering({ isHovering: true, id: mainItem.name })
