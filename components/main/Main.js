@@ -1,9 +1,14 @@
 import { Box, Flex, SimpleGrid, Text } from "@chakra-ui/react";
 import React, { useState } from "react";
 import Revista from "../images/capa_revista.png";
-import Sociais from "../images/capa_sociais.png";
+import Teto from "../images/capa_teto.png";
 import Edicao from "../images/capa_edicao.png";
 import Playlist from "../images/capa_playlist.png";
+import Borda from "../images/capa_borda.png";
+import Brilho from "../images/capa_brilho.png";
+import Iniciativa from "../images/capa_iniciativa.png";
+import Indicios from "../images/capa_indicios.png";
+import Redes from "../images/capa_redes.png";
 import Image from "next/dist/client/image";
 import { motion } from "framer-motion";
 
@@ -11,7 +16,7 @@ const mainList = [
   {
     name: "Sociais",
     message: "Trabalhos feitos para Redes Sociais em 2022",
-    img: Sociais,
+    img: Teto,
   },
   {
     name: "Revista",
@@ -27,6 +32,31 @@ const mainList = [
     name: "Playlist",
     message: "Playlist para Site",
     img: Playlist,
+  },
+  {
+    name: "Borda",
+    message: "Exposição",
+    img: Borda,
+  },
+  {
+    name: "Brilho",
+    message: "Brilho de Marte",
+    img: Brilho,
+  },
+  {
+    name: "Iniciativa",
+    message: "Iniciativa",
+    img: Iniciativa,
+  },
+  {
+    name: "Indicios",
+    message: "Indicios",
+    img: Indicios,
+  },
+  {
+    name: "Redes Sociais",
+    message: "Redes Sociais",
+    img: Redes,
   },
 ];
 
@@ -98,19 +128,19 @@ const Main = () => {
                   top="0%"
                   right="0%"
                 >
-                  {isHovering.isHovering && isHovering.id === mainItem.name && (
-                    <Box backdropFilter='auto' backdropBlur='8px' >
+                  {/* {isHovering.isHovering && isHovering.id === mainItem.name && (
+                    <Box backdropFilter='auto' >
                       <Text color="blue.500" fontSize="2xl" align="center" shadow="base" borderRadius="md">
                         {mainItem.message}
                       </Text>
                     </Box>
-                  )}
+                  )} */}
                 </Flex>
                 <Box
                   filter={
                     isHovering.isHovering && isHovering.id === mainItem.name
-                      ? ""
-                      : "grayscale(1)"
+                      ? "grayscale(1)"
+                      : ""
                   }
                 >
                   <Image
