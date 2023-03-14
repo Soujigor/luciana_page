@@ -1,12 +1,23 @@
-import '../styles/globals.css'
-import { ChakraProvider } from '@chakra-ui/react'
+import "../styles/globals.css";
+import { Box, ChakraProvider, Flex } from "@chakra-ui/react";
+import Header from "../components/header/Header";
 
 function MyApp({ Component, pageProps }) {
   return (
-  <ChakraProvider>
-  <Component {...pageProps} />
-  </ChakraProvider>
-  )
+    <ChakraProvider>
+      <Flex
+        flexDirection="column"
+        justify="center"
+        alignItems="center"
+        px="30px"
+      >
+        <Box maxWidth="1300px" width="100%">
+          <Header />
+          <Component {...pageProps} />
+        </Box>
+      </Flex>
+    </ChakraProvider>
+  );
 }
 
-export default MyApp
+export default MyApp;

@@ -7,7 +7,7 @@ import Footer from "../components/footer/Footer";
 
 export default function Home() {
   return (
-    <Flex flexDirection="column" justify="center" alignItems="center" px="30px">
+    <Flex >
       <Head>
         <title>Luciana Page</title>
         <meta name="description" content="Portfólio de Designer. Design, Fotografia, Ux" />
@@ -15,7 +15,7 @@ export default function Home() {
         
       </Head>
       <Box maxWidth="1300px" width="100%">
-        <Header />
+        
         <Main />
         <Footer />
 
