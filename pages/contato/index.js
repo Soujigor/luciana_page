@@ -1,8 +1,8 @@
 import { Box, Flex } from "@chakra-ui/react";
 import React from 'react'
-import Contato from "../src/components/Contato/Contato";
+import Contato from "../../src/components/Contato/Contato";
 
-const contato = () => {
+const index = () => {
     return (
         <Flex flexDirection="column" justify="center" alignItems="center" px="30px">
           <Box maxWidth="1100px" width="100%">
@@ -12,4 +12,4 @@ const contato = () => {
       );
 }
 
-export default contato
+export default index

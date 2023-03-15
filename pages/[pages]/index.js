@@ -200,7 +200,7 @@ export async function getServerSideProps(context) {
 
   const { pages } = context.params;
 
-  console.log(pages);
+  
   if (!pageNames.includes(pages)) {
     return {
       redirect: {
