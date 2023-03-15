@@ -1,6 +1,6 @@
 import { Box, Flex } from "@chakra-ui/react";
 import React from 'react'
-import Contato from "../../src/components/Contato/Contato";
+import Contato from "../../src/components/contato/Contato";
 
 const index = () => {
     return (

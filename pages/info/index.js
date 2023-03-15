@@ -1,6 +1,6 @@
 import { Box, Flex } from "@chakra-ui/react";
 import React from "react";
-import Info from "../../src/components/Info/Info";
+import Info from "../../src/components/info/Info";
 
 const index = () => {
   return (
