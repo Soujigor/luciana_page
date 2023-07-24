@@ -8,13 +8,13 @@ const mainList = [
     name: "Teto",
     message: "Teto",
     img: "/main/capa_teto.png",
-    link: "/teto"
+    link: "/teto",
   },
   {
     name: "Revista",
     message: "Revista EBAC",
     img: "main/capa_revista.png",
-    link: "/revista"
+    link: "/revista",
   },
   {
     name: "Edição",
@@ -26,31 +26,31 @@ const mainList = [
     name: "Borda",
     message: "Borda",
     img: "main/capa_borda.png",
-    link: "/borda"
+    link: "/borda",
   },
   {
     name: "Brilho",
     message: "Brilho de Marte",
     img: "main/capa_brilho.png",
-    link: "/brilhodemarte"
+    link: "/brilhodemarte",
   },
   {
     name: "Iniciativa",
     message: "Iniciativa",
-    img:"main/capa_iniciativa.png",
-    link: "/iniciativa"
+    img: "main/capa_iniciativa.png",
+    link: "/iniciativa",
   },
   {
     name: "Indicios",
     message: "Indícios",
     img: "main/capa_indicios.png",
-    link: "/indicios"
+    link: "/indicios",
   },
   {
     name: "Redes Sociais",
     message: "Trabalhos feitos para Redes Sociais em 2022",
     img: "main/capa_redes.png",
-    link: "/sociais"
+    link: "/sociais",
   },
 ];
 
@@ -82,23 +82,30 @@ const Main = () => {
       paddingTop="30px"
       cursor="pointer"
     >
-      <SimpleGrid
+      <Flex
         w="100%"
         minChildWidth={["200px", "300px", "350px", "550px"]}
         as={motion.div}
         variants={container}
         initial="hidden"
         animate="show"
+        columns={1}
+        gap={10}
+        flexDir="column"
+        align="center"
+        justify="center"
       >
         {mainList.map((mainItem) => {
           return (
-            <Box
+            <Flex
               w="100%"
               overflow="hidden"
               h="100%"
               key={mainItem.name}
               as={motion.div}
               variants={item}
+              align="center"
+              justify="center"
             >
               <Link href={mainItem.link}>
                 <Box
@@ -157,10 +164,10 @@ const Main = () => {
                   </Box>
                 </Box>
               </Link>
-            </Box>
+            </Flex>
           );
         })}
-      </SimpleGrid>
+      </Flex>
     </Flex>
   );
 };
